@@ -47,9 +47,9 @@ class ViewController: UIViewController, UIScrollViewDelegate{
         let page = firstScroll.contentOffset.x / firstScroll.frame.size.width
         pageControl.currentPage = Int(page)
         
-        if scrollView.contentOffset.y>0 {
-            scrollView.contentOffset.y = 0
-        }
+        
+        scrollView.contentOffset.y = 0
+        
     }
     
     
@@ -83,6 +83,12 @@ class ViewController: UIViewController, UIScrollViewDelegate{
         }
     }
     
+    @objc func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "test")
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     func second() {
         secondArray = [second1,second2,second3]
         secondScroll.isPagingEnabled = true
@@ -99,14 +105,26 @@ class ViewController: UIViewController, UIScrollViewDelegate{
                 
                 scrollView2.SecondImg.image = UIImage(named: secondscroll["image"]!)
                 secondScroll.addSubview(scrollView2)
+                
+                scrollView2.SecondImg.frame.size.width = 100
+                scrollView2.SecondImg.frame.size.height = 100
+                
+                
                 scrollView2.frame.size.width = self.secondScroll.bounds.size.width
                 scrollView2.frame.size.height = self.secondScroll.bounds.size.height
+                
                 //scrollView.imageView?.contentMode = UIViewContentMode.scaleAspectFill
-                scrollView2.frame.origin.x = CGFloat(index) * self.view.bounds.size.width
+                scrollView2.frame.origin.x = (CGFloat(index) * (self.view.bounds.size.width - 100) + 10)
+                scrollView2.frame.origin.y = 10
                 //scrollView.contentMode = UIViewContentMode.scaleAspectFill
+                
+                let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+                scrollView2.addGestureRecognizer(gestureRecognizer)
             }
         }
     }
+    
+    
     
     func third() {
         thirdArray = [third1,third2,third3]

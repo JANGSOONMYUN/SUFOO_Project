@@ -10,7 +10,9 @@ import UIKit
 
 class scrollView2: UITableViewCell {
 
+    @IBOutlet weak var hashTag1: UILabel!
     
+    @IBOutlet weak var hashTag2: UILabel!
     @IBOutlet weak var SecondImg: UIImageView!
     
 }
