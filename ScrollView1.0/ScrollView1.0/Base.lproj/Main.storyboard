@@ -84,6 +84,11 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="241.5"/>
                                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
+                                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZEq-rx-leN">
+                                                <rect key="frame" x="0.0" y="78" width="375" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -190,6 +195,7 @@
                     <connections>
                         <outlet property="firstScroll" destination="Qh3-ht-m3C" id="AI6-4V-UGc"/>
                         <outlet property="pageControl" destination="Cgj-5q-hK6" id="Xry-Kj-K3T"/>
+                        <outlet property="searchBar_main" destination="ZEq-rx-leN" id="4ei-BR-cDE"/>
                         <outlet property="secondScroll" destination="2Es-9A-g7e" id="zvZ-uN-2PE"/>
                         <outlet property="thirdScroll" destination="jXY-DE-t3q" id="CP1-gv-Ths"/>
                         <segue destination="m1S-mA-N9e" kind="showDetail" id="W9b-PV-lNf"/>
