@@ -27,10 +27,10 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     
         let searchController = UISearchController(searchResultsController: nil)
        
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search for SUFO"
+       
+        //searchController.searchBar.barTintColor = UIColor.white
+        //searchController.searchBar.tintColor = UIColor.black
+        //searchController.searchBar.barTintColor = UIColor(white:1, alpha: 0)
         
         //searchController.searchBar.Move
         //searchController.searchBar.setPositionAdjustment(UIOffsetMake(255, 0), forSearchBaricon
@@ -61,17 +61,28 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         let frame = CGRect(x: 0, y: 0, width: 300, height: 40)
         
         let titleView = UIView(frame: frame)
-        
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.showsCancelButton = false
+        searchController.searchBar.placeholder = "Search for SUFO"
+        searchController.searchBar.searchBarStyle = .minimal
+        searchController.searchBar.isTranslucent = true
+        searchController.searchBar.barTintColor = UIColor.clear
+        searchController.searchBar.backgroundColor = UIColor.clear
         searchController.searchBar.backgroundImage = UIImage()
         searchController.searchBar.frame = frame
         titleView.addSubview(searchController.searchBar)
         navigationItem.titleView = titleView
+        
         /*
         let searchBar = UISearchBar(frame: CGRect(x:0,y:0,width:(UIScreen.main.bounds.width),height:70))
         searchBar.setImage(UIImage(named:"search"), for: .search, state: .normal)
        
+         
         //searchBar.backgroundColor = UIColor.red
         searchBar.barTintColor = UIColor(white:1, alpha: 0)
+        
         searchBar.showsScopeBar = true
        *//*
         let textFieldInsideSearchBar = searchBar.valueForKey("searchField") as? UITextField
