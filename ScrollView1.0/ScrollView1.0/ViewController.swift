@@ -217,7 +217,6 @@ class ViewController: UIViewController, UIScrollViewDelegate{
     
     
     func first() {
-        
     
         firstArray = [first1,first2,first3]
         firstScroll.isPagingEnabled = true
@@ -251,6 +250,7 @@ class ViewController: UIViewController, UIScrollViewDelegate{
         let vc = storyboard.instantiateViewController(withIdentifier: "test")
         self.present(vc, animated: true, completion: nil)
     }
+    
     
     func second() {
         secondArray = [second1,second2,second3]
