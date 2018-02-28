@@ -217,6 +217,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         searchBar_main.setTextFieldClearButtonColor(color: .white)
         
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).leftView = nil
+        
+        UISearchBar.appearance().searchTextPositionAdjustment = UIOffsetMake(10, 0)
+        
         
     }
 
